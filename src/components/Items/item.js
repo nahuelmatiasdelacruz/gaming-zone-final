@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import ItemCount from "./ItemCount";
-import "../css/styles.css";
-import p1 from "../img/p1.jpg";
+import "../../css/styles.css";
 import { Link } from "react-router-dom";
+import { CartContext } from "../Cart/CartContext";
 
 const Item = (props) =>{
-    const onAdd = (qty) =>{
-        alert("Has seleccionado " + qty + " items");
+    const {id, title, stock, price, pictureUrl, Marca, Modelo} = props;
+    const cart = useContext(CartContext);
+    const onAdd = (qty) => {
+        addItem(qty);
     }
-    const {id, title, price, pictureUrl, stock} = props;
+    const addItem = (cant)=>{
+        const itemToCart = {
+            id: id,
+            imgUrl: pictureUrl,
+            price: price,
+            detail: title + " " + Marca + " " + Modelo,
+            cant: cant
+        };
+        cart.addToCart(itemToCart);
+        cart.setCant(cant);
+    }
     return(
         <React.Fragment>
             <div className="cart-item">
                 <h2 className="item-name">{title}</h2>
                 <div className="imagen-producto">
-                    <Link to={`/item/${id}`}><img src={p1} alt="Imagen Producto"></img></Link>
+                    <Link to={`/item/${id}`}><img src={pictureUrl} alt="Imagen Producto"></img></Link>
                 </div>
                 <div className="detalles">
                     <h4>Precio: <span>${price}</span></h4>

@@ -1,9 +1,8 @@
-import React from "react";
-import '../css/styles.css';
-import WidgetCart from "./WidgetCart.js";
+import React, {useContext} from "react";
+import '../../css/styles.css';
+import WidgetCart from "../Cart/WidgetCart.js";
 import { Link } from "react-router-dom";
-import { CartContext } from "./CartContext";
-import { useContext } from "react";
+import { CartContext } from "../Cart/CartContext";
 
 const NavBar = () => {
     const cart = useContext(CartContext);

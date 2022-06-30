@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
-import Imagen from "../img/p1.jpg";
+import React, { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../Cart/CartContext";
 
 const ItemDetail = (props) =>{
     const {item, id} = props;
@@ -28,7 +26,7 @@ const ItemDetail = (props) =>{
         <React.Fragment>
             <div className="item-detail">
                 <div className="img-detail">
-                    <img src={Imagen} alt="Imagen Producto"></img>
+                    <img src={item.pictureUrl} alt="Imagen Producto"></img>
                 </div>
                 <div className="description-detail">
                     <h2>{item.title}</h2>

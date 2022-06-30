@@ -47,10 +47,16 @@
 }
 
 .cart-item img{
-    max-width: 200px;
+    width: 200px;
     margin-top: 10px;
+    height: 100%;
 }
-
+.imagen-producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .finish-buying{
     text-decoration: none;
     color: white;
@@ -551,4 +557,10 @@
 input[type="text"]:focus{
     border: none;
     outline: none;
+}
+
+.search-button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
 }

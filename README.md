@@ -1,70 +1,73 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Gaming Zone
 
-## Available Scripts
+El proyecto tiene como objetivo proporcionar al publico gamer una tienda que, en
+sencillos pasos, permita adquirir hardware gaming a precios muy competitivos respecto al
+mercado.
 
-In the project directory, you can run:
+## Enlace a la web del proyecto:
+- [Gaming Zone Web](https://gaming-zone-shop.netlify.app)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Autor
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Nahuel De La Cruz](https://www.linkedin.com/in/nahuel-de-la-cruz/)
+## Paleta de colores utilizada
 
-### `npm test`
+| Color             | Valor Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Main Black | #2c2c2a |
+| Main Red | #db5461 |
+| Main Red Hover | #db2638 |
+| Main Grey | #686963 |
+| White | #fafafa |
+| Alice Blue | #e3f2fd |
+| Alice Blue Carrito | #e3f2fd56 |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 🚀 Sobre Mi
+Apasionado por la tecnología y el desarrollo, comencé hace 1 año a estudiar desarrollo
+web realizando diferentes cursos en Udemy y Coder House.
+## 🛠 Skills
+Javascript, HTML, CSS, C#, SQL, PHP, React JS, Java
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Logo](https://i.ibb.co/84PzkTN/logo.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Para ejecutar el proyecto de manera local
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clona el proyecto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  git clone https://github.com/nahuelmatiasdelacruz/gaming-zone-final
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ir a la carpeta del proyecto
 
-## Learn More
+```bash
+  cd gaming-zone-final
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Instalar las dependencias
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  npm install
+```
 
-### Code Splitting
+Inicia el servidor local
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  npm run start
+```
+## Demo
 
-### Analyzing the Bundle Size
+Demo de funcionamiento básico del proyecto:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Demo](https://drive.google.com/file/d/1IoBhUUrzaO1C-DvlEplsMrhpLBBrrza4/view?usp=sharing)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Tech Stack
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Client:** React JS

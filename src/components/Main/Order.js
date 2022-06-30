@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { CartContext } from "./CartContext";
-import { useContext } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "../Cart/CartContext";
 import "firebase/firestore";
 import { Link } from "react-router-dom";
 import { doc,collection, addDoc, updateDoc, getDoc } from "firebase/firestore";
-import db from "../firebaseConfig";
+import db from "../../firebaseConfig";
 
 const Order =()=>{
     const cart = useContext(CartContext);
     const [orderId,setOrderId] = useState("");
+    const [loading, setLoading] = useState(false);
     const isUserInOrder = (c)=>{
         if(Object.keys(c).length === 0){
             return false;
@@ -76,11 +76,11 @@ const Order =()=>{
         }
     }
     const confirmOrder = async ()=>{
+        setLoading(true);
         cart.setOrderConfirmed(cart.cartOrder);
         const docRef = await addDoc(collection(db, "orders"), cart.cartOrder);
         setOrderId(docRef.id);
         cart.setOrderId(docRef.id);
-        console.log(cart.cartOrder);
         cart.cartOrder.items.forEach(item=>{
             
             const productRef = doc(db, "products",item.id);
@@ -93,6 +93,7 @@ const Order =()=>{
             }
             productRefUpdate();
         })
+        setLoading(false);
     }
     const clearAll = ()=>{
         cart.clear();
@@ -105,7 +106,11 @@ const Order =()=>{
                 <div className="order-final-container">
                     <div className="order-final">
                         <h2>Detalle de tu<span> pedido realizado: </span></h2>
+                        {loading ? 
+                        <h3>Id: <span>Cargando...</span></h3>
+                        : 
                         <h3>Id: <span>{orderId}</span></h3>
+                        }
                         <h4>Detalles del comprador: </h4>
                         <div className="final-detail-container">
                             <p>Nombre: <span> {cart.cartOrder.buyer.name} </span></p>

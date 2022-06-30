@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useContext }  from "react";
 import { CartContext } from "./CartContext";
-import { useContext } from "react";
 import CartEmpty from "./CartEmpty";
 import CartItem from "./CartItem";
 import { Link } from "react-router-dom";
-import "../css/styles.css";
+import "../../css/styles.css";
 
 const Cart = ()=>{
     const test = useContext(CartContext);
@@ -17,7 +16,7 @@ const Cart = ()=>{
                 {test.cartList.length!==0 ? <h2 className="cart-title">Tu carrito</h2> : <></>}
                 <div className="contenido-carrito">
                     {test.cartList.length === 0 ? <CartEmpty/> : 
-                        test.cartList.map((item)=><CartItem img={item.img} detail={item.detail} price={item.price} id={item.id} key={item.id} cant={item.cant}/>)
+                        test.cartList.map((item)=><CartItem img={item.imgUrl} detail={item.detail} price={item.price} id={item.id} key={item.id} cant={item.cant}/>)
                     }
                     {test.cartList.length === 0 ? 
                         <></> :

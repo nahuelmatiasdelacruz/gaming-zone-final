@@ -1,7 +1,5 @@
-import React from "react";
-import ImgProduct from "../img/p1.jpg";
-import DeleteProduct from "../img/delete-icon.png";
-import { useContext } from "react";
+import React, { useContext }  from "react";
+import DeleteProduct from "../../img/delete-icon.png";
 import { CartContext } from "./CartContext";
 
 const CartItem = (props)=>{
@@ -10,7 +8,7 @@ const CartItem = (props)=>{
     return(
         <React.Fragment>
             <div className="cart-content-item">
-                <img src={ImgProduct} alt="Imagen Producto"/>
+                <img src={img} alt="Imagen Producto"/>
                 <h4 className="detail-prod">{detail}</h4>
                 <h5 className="cant-prod"><span>Cantidad: </span>{cant} </h5>
                 <h5 className="price-prod"> ${price}</h5>

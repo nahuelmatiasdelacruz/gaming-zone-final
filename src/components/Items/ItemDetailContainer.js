@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { getDoc, doc } from "firebase/firestore";
-import db from "../firebaseConfig";
+import db from "../../firebaseConfig";
 
 const ItemDetailContainer = ()=>{
     const [datos,setDatos] = useState([]);
@@ -13,7 +12,7 @@ const ItemDetailContainer = ()=>{
           const result = await getDoc(doc(db,"products",id))
           setDatos(result.data());
         }catch(error){
-          console.log(error);
+          alert("Hubo un error al conectarse a la base de datos");
         }
     }
     useEffect(()=>{

@@ -1,25 +1,24 @@
+import { collection, getDocs, query, where } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
-import '../css/styles.css';
-import LoadingGif from "../img/loading.gif";
-import ItemList from "./ItemList";
+import LoadingGif from "../../img/loading.gif";
 import { useParams } from "react-router-dom";
-import { collection, query, where, getDocs } from "firebase/firestore";
-import db from "../firebaseConfig";
-import { CartContext } from "./CartContext";
+import db from "../../firebaseConfig";
+import { CartContext } from "../Cart/CartContext";
+import ItemList from "../Items/ItemList";
 
-const ItemListContainer = () =>{
+const Search = () =>{
+    const {value} = useParams();
     const cart = useContext(CartContext);
     if(cart.orderId!==""){
       cart.clear();
     }
-    let {id} = useParams();
     const [datos,setDatos] = useState([]);
     const [loading, setLoading] = useState(false);
     const getProducts = async () =>{
         try{
           setLoading(true);
-          if(id!==undefined){
-            const q = query(collection(db, "products"), where("categoryId", "==", id));
+          if(value!==""){
+            const q = query(collection(db, "products"), where("title","==",value));
             const querySnapshot = await getDocs(q);
             const dataFromFirestore = querySnapshot.docs.map(document=>({
               id: document.id,
@@ -36,21 +35,21 @@ const ItemListContainer = () =>{
             setDatos(dataFromFirestore);
           }
         }catch(error){
-          console.log(error);
+          alert("Hubo un error al conectarse a la base de datos");
         }finally{
           setLoading(false);
         }
     }
     useEffect(()=>{
         getProducts();
-    }, [id]);
+    }, [value]);
     return(
         <React.Fragment>
             <div className="contenedor-productos">
-                {loading ? <img className="loading" src={LoadingGif} alt="Loading.."></img> : <ItemList productList={datos} categoryId={id}/>}
+                {loading ? <img className="loading" src={LoadingGif} alt="Loading.."></img> : <ItemList productList={datos}/>}
             </div>
         </React.Fragment>
     )
 }
 
-export default ItemListContainer;
+export default Search;
